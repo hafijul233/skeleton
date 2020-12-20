@@ -43,7 +43,7 @@
             "Tests\\Support\\": "tests/_support"
         }
     },
-    "minimum-stability": "beta",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
         "post-update-cmd": [

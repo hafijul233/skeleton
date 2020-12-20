@@ -22,3 +22,16 @@
 @import '~admin-lte/build/scss/parts/plugins';
 @import '~admin-lte/build/scss/parts/miscellaneous';
 
+//Custom Style Overwrite
+// ---------------------------------------------------
+
+// User Menu
+.navbar-nav > .user-menu {
+    > .dropdown-menu {
+        &,
+        // Menu Body
+        > .user-body {
+            border-bottom: none;
+        }
+    }
+}

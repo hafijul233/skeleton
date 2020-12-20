@@ -32694,3 +32694,8 @@ a.text-muted:hover {
   color: #ffffff;
 }
 
+.navbar-nav > .user-menu > .dropdown-menu,
+.navbar-nav > .user-menu > .dropdown-menu > .user-body {
+  border-bottom: none;
+}
+
