@@ -32699,3 +32699,9 @@ a.text-muted:hover {
   border-bottom: none;
 }
 
+.login-card-body .input-group .input-group-text,
+.register-card-body .input-group .input-group-text {
+  border-bottom-right-radius: 0.25rem !important;
+  border-top-right-radius: 0.25rem !important;
+}
+

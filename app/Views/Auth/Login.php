@@ -6,12 +6,15 @@
 
         <form action="<?= route_to('login') ?>" method="post"
               accept-charset="UTF-8" autocomplete="off" spellcheck="false">
-            <div class="input-group mb-3">
-                <input type="email" class="form-control" placeholder="Email">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                        <span class="fas fa-envelope"></span>
+            <div class="form-group">
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control is-valid" placeholder="Email">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
                     </div>
+                    <span class="invalid-feedback text-success">testing</span>
                 </div>
             </div>
             <div class="input-group mb-3">

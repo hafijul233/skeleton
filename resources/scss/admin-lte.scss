@@ -35,3 +35,13 @@
         }
     }
 }
+
+.login-card-body,
+.register-card-body {
+    .input-group {
+        .input-group-text {
+            border-bottom-right-radius: $border-radius !important;
+            border-top-right-radius: $border-radius !important;
+        }
+    }
+}
