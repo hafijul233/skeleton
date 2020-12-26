@@ -29,19 +29,25 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
 $routes->get('/', 'Home::index');
 
-$routes->get('/login', 'Auth\Login::index', ['as' => 'login']);
-$routes->post('/login', 'Auth\Login::loginAttempt', []);
+$routes->group('/', ['namespace' => 'App\Controllers\Auth'], function ($routes) {
+    $routes->get('login', 'Login::index', ['as' => 'login']);
+    $routes->post('login', 'Login::loginAttempt', ['filter' => 'login']);
 
-$routes->get('/forgot-password', 'Auth\ForgotPassword::index', ['as' => 'forgot']);
-$routes->post('/forgot-password', 'Auth\ForgotPassword::loginAttempt', []);
+    $routes->get('forgot-password', 'ForgotPassword::index', ['as' => 'forgot']);
+    $routes->post('forgot-password', 'ForgotPassword::loginAttempt', ['filter' => 'forgot-pass']);
 
-$routes->get('/reset-password', 'Auth\ResetPassword::index', ['as' => 'reset']);
-$routes->post('/reset-password', 'Auth\ResetPassword::loginAttempt', []);
+    $routes->get('reset-password', 'ResetPassword::index', ['as' => 'reset']);
+    $routes->post('reset-password', 'ResetPassword::loginAttempt', ['filter' => 'reset-pass']);
 
-$routes->get('/register', 'Auth\Register::index', ['as' => 'register']);
-$routes->post('/register', 'Auth\Register::loginAttempt', []);
+    $routes->get('register', 'Register::index', ['as' => 'register']);
+    $routes->post('register', 'Register::loginAttempt', ['filter' => 'register']);
+
+    $routes->get('email-verification', 'VerifyEmail::index', ['as' => 'verify']);
+    $routes->post('email-verification', 'VerifyEmail::loginAttempt', ['filter' => 'verify-email']);
+});
 
 /**
  * --------------------------------------------------------------------

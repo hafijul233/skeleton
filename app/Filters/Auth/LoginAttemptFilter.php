@@ -3,7 +3,6 @@
 use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
-use CodeIgniter\Services;
 
 /**
  * Short description of this class usages
@@ -24,9 +23,26 @@ class LoginAttemptFilter implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        //Validator Instants
-        $validator = Services::validation();
+        if ($request->getMethod() === 'post') {
+            //Validator Instants
+            $validator = service('validation');
 
+            $ruleSet['password'] = ['label' => 'Password', 'rules' => 'required|min_length[8]|max_length[100]|string|alpha_numeric_punct'];
+
+            //Confirm Email Address or Username
+            if (filter_input(INPUT_POST, 'credential', FILTER_VALIDATE_EMAIL) === false) {
+                $ruleSet['credential'] = ['label' => 'Username', 'rules' => 'required|min_length[5]|max_length[100]|string|alpha_dash'];
+            } else {
+                $ruleSet['credential'] = ['label' => 'Email Address', 'rules' => 'required|min_length[5]|max_length[255]|string|valid_email'];
+            }
+
+            //sending rules to validation object
+            $validator->setRules($ruleSet);
+
+            if (!$validator->withRequest($request)->run()) {
+                return redirect()->back()->withInput()->with('errors', $validator->getErrors());
+            }
+        }
     }
 
     //--------------------------------------------------------------------

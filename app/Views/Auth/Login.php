@@ -21,6 +21,7 @@
 
         <form action="<?= route_to('login') ?>" method="post"
               accept-charset="UTF-8" autocomplete="off" spellcheck="false">
+            <?= csrf_field() ?>
             <div class="form-group">
                 <div class="input-group mb-3">
                     <input type="text"
@@ -38,16 +39,16 @@
             </div>
             <div class="input-group mb-3">
                 <input type="password"
-                       class="form-control <?= session('errors.credential') ? 'is-invalid' : null ?>"
-                       name="credential" minlength="3" maxlength="255" size="255" value="<?= old('credential') ?>"
+                       class="form-control <?= session('errors.password') ? 'is-invalid' : null ?>"
+                       name="password" minlength="3" maxlength="255" size="255" value="<?= old('password') ?>"
                        placeholder="Email Address or Username"
                 />
                 <div class="input-group-append">
                     <div class="input-group-text">
-                        <span class="fas fa-envelope"></span>
+                        <span class="fas fa-lock"></span>
                     </div>
                 </div>
-                <span id="credential-error" class="invalid-feedback"><?= session('errors.credential') ?></span>
+                <span id="password-error" class="invalid-feedback"><?= session('errors.password') ?></span>
             </div>
             <div class="row">
                 <div class="col-8">
