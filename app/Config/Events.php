@@ -50,3 +50,17 @@ Events::on('pre_system', function () {
 		Services::toolbar()->respond();
 	}
 });
+
+/**
+ * Log In Trigger Event
+ */
+Events::on('login', function () {
+
+});
+
+/**
+ * Log Out Trigger Event
+ */
+Events::on('logout', function () {
+
+});
