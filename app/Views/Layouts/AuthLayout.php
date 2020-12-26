@@ -7,14 +7,14 @@
 
     <title><?= esc($title) ?> | <?= APP_NAME ?></title>
 
+    <!-- Vendor Styles -->
+    <?= $this->renderSection('css-vendor') ?>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="<?= base_url('plugins/fontawesome-free/css/all.min.css') ?>">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="<?= base_url('plugins/icheck-bootstrap/icheck-bootstrap.min.css') ?>">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url('css/admin-lte.css') ?>">
+    <!-- Custom Styles -->
+    <?= $this->renderSection('css') ?>
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
@@ -33,7 +33,12 @@
 <script src="<?= base_url('plugins/jquery/jquery.min.js') ?>"></script>
 <!-- Bootstrap 4 -->
 <script src="<?= base_url('plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+<!-- Vendor Scripts -->
+<?= $this->renderSection('js-vendor') ?>
 <!-- AdminLTE App -->
 <script src="<?= base_url('js/adminlte.min.js') ?>"></script>
+<!-- Custom Scripts -->
+<?= $this->renderSection('js') ?>
+
 </body>
 </html>

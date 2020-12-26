@@ -1,4 +1,16 @@
 <?= $this->extend('App\Views\Layouts\AuthLayout') ?>
+
+<?= $this->section('css-vendor') ?>
+<!-- Ionicons -->
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- icheck bootstrap -->
+<link rel="stylesheet" href="<?= base_url('plugins/icheck-bootstrap/icheck-bootstrap.min.css') ?>">
+<?= $this->endSection() ?>
+
+<?= $this->section('css') ?>
+
+<?= $this->endSection() ?>
+
 <?= $this->section('content') ?>
 <div class="card">
     <div class="card-body login-card-body">
@@ -55,4 +67,12 @@
     </div>
     <!-- /.login-card-body -->
 </div>
+<?= $this->endSection() ?>
+
+<?= $this->section('js-vendor') ?>
+
+<?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+
 <?= $this->endSection() ?>
