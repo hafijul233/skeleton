@@ -92,7 +92,25 @@
 <?= $this->section('js') ?>
 <script type="text/javascript">
     $(function() {
-        toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.');
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+
+        toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.', 'Notification');
         $('.toastrDefaultSuccess').click(function() {
             toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
         });
