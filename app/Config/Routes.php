@@ -5,9 +5,8 @@ $routes = Services::routes();
 
 // Load the system's routing file first, so that the app and ENVIRONMENT
 // can override as needed.
-if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
-{
-	require SYSTEMPATH . 'Config/Routes.php';
+if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
+    require SYSTEMPATH . 'Config/Routes.php';
 }
 
 /**
@@ -32,16 +31,16 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
-$routes->get('/login', 'Auth\Login::index', ['as' =>'login']);
+$routes->get('/login', 'Auth\Login::index', ['as' => 'login']);
 $routes->post('/login', 'Auth\Login::loginAttempt', []);
 
-$routes->get('/forgot-password', 'Auth\ForgotPassword::index', ['as' =>'forgot']);
+$routes->get('/forgot-password', 'Auth\ForgotPassword::index', ['as' => 'forgot']);
 $routes->post('/forgot-password', 'Auth\ForgotPassword::loginAttempt', []);
 
-$routes->get('/reset-password', 'Auth\ResetPassword::index', ['as' =>'reset']);
+$routes->get('/reset-password', 'Auth\ResetPassword::index', ['as' => 'reset']);
 $routes->post('/reset-password', 'Auth\ResetPassword::loginAttempt', []);
 
-$routes->get('/register', 'Auth\Register::index', ['as' =>'register']);
+$routes->get('/register', 'Auth\Register::index', ['as' => 'register']);
 $routes->post('/register', 'Auth\Register::loginAttempt', []);
 
 /**
@@ -57,7 +56,6 @@ $routes->post('/register', 'Auth\Register::loginAttempt', []);
  * You will have access to the $routes object within that file without
  * needing to reload it.
  */
-if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
-{
-	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
+if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
+    require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }

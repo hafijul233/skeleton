@@ -12,7 +12,10 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-<div class="card">
+<div class="card card-primary card-outline">
+    <div class="card-header text-center border-bottom-0">
+        <h3 class="m-0"><?= esc($title) ?></h3>
+    </div>
     <div class="card-body login-card-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
@@ -20,22 +23,31 @@
               accept-charset="UTF-8" autocomplete="off" spellcheck="false">
             <div class="form-group">
                 <div class="input-group mb-3">
-                    <input type="email" class="form-control is-valid" placeholder="Email">
+                    <input type="text"
+                           class="form-control <?= session('errors.credential') ? 'is-invalid' : null ?>"
+                           name="credential" minlength="3" maxlength="255" size="255" value="<?= old('credential') ?>"
+                           placeholder="Email Address or Username"
+                    />
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-envelope"></span>
                         </div>
                     </div>
-                    <span class="invalid-feedback text-success">testing</span>
+                    <span id="credential-error" class="invalid-feedback"><?= session('errors.credential') ?></span>
                 </div>
             </div>
             <div class="input-group mb-3">
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password"
+                       class="form-control <?= session('errors.credential') ? 'is-invalid' : null ?>"
+                       name="credential" minlength="3" maxlength="255" size="255" value="<?= old('credential') ?>"
+                       placeholder="Email Address or Username"
+                />
                 <div class="input-group-append">
                     <div class="input-group-text">
-                        <span class="fas fa-lock"></span>
+                        <span class="fas fa-envelope"></span>
                     </div>
                 </div>
+                <span id="credential-error" class="invalid-feedback"><?= session('errors.credential') ?></span>
             </div>
             <div class="row">
                 <div class="col-8">

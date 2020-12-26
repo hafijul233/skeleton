@@ -12,7 +12,10 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-<div class="card">
+<div class="card card-primary card-outline">
+    <div class="card-header text-center border-bottom-0">
+        <h3 class="m-0"><?= esc($title) ?></h3>
+    </div>
     <div class="card-body register-card-body">
         <p class="login-box-msg">Register a new membership</p>
 

@@ -12,7 +12,10 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-<div class="card">
+<div class="card card-primary card-outline">
+    <div class="card-header text-center border-bottom-0">
+        <h3 class="m-0"><?= esc($title) ?></h3>
+    </div>
     <div class="card-body login-card-body">
         <p class="login-box-msg">You are only one step a way from your new password, recover your password now.</p>
 
