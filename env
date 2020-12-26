@@ -32,7 +32,7 @@ app.sessionCookieName = 'web_session'
 
 # set if server has 777 permission to `WRITEPATH./session` directory
 # then set to comment mode framework will handle
-app.sessionSavePath = NULL
+# app.sessionSavePath = NULL
 app.sessionMatchIP = true
 app.sessionTimeToUpdate = 300
 app.sessionRegenerateDestroy = false
@@ -106,8 +106,7 @@ honeypot.hidden = 'true'
 honeypot.label = 'Fill This Field'
 honeypot.name = 'honeypot'
 honeypot.template = '<label>{label}</label><input type="text" name="{name}" value=""/>'
-honeypot.container = '
-<div style="display:none">{template}</div>'
+honeypot.container = '<div style="display:none">{template}</div>'
 
 #--------------------------------------------------------------------
 # EMAIL
@@ -136,4 +135,3 @@ email.mailType = 'text'
 
 migrations.table = 'migrations'
 migrations.timestampFormat = 'Y-m-d-His_'
-
