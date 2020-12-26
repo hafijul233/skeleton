@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <!-- icheck bootstrap -->
 <link rel="stylesheet" href="<?= base_url('plugins/icheck-bootstrap/icheck-bootstrap.min.css') ?>">
+<!-- Toastr -->
+<link rel="stylesheet" href="<?= base_url('plugins/toastr/toastr.min.css') ?>">
 <?= $this->endSection() ?>
 
 <?= $this->section('css') ?>
@@ -55,7 +57,8 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('js-vendor') ?>
-
+<!-- Toastr -->
+<script src="<?= base_url('plugins/toastr/toastr.min.js') ?>"></script>
 <?= $this->endSection() ?>
 
 <?= $this->section('js') ?>

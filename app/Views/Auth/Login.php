@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <!-- icheck bootstrap -->
 <link rel="stylesheet" href="<?= base_url('plugins/icheck-bootstrap/icheck-bootstrap.min.css') ?>">
+<!-- Toastr -->
+<link rel="stylesheet" href="<?= base_url('plugins/toastr/toastr.min.css') ?>">
 <?= $this->endSection() ?>
 
 <?= $this->section('css') ?>
@@ -83,9 +85,26 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('js-vendor') ?>
-
+<!-- Toastr -->
+<script src="<?= base_url('plugins/toastr/toastr.min.js') ?>"></script>
 <?= $this->endSection() ?>
 
 <?= $this->section('js') ?>
-
+<script type="text/javascript">
+    $(function() {
+        toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.');
+        $('.toastrDefaultSuccess').click(function() {
+            toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+        $('.toastrDefaultInfo').click(function() {
+            toastr.info('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+        $('.toastrDefaultError').click(function() {
+            toastr.error('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+        $('.toastrDefaultWarning').click(function() {
+            toastr.warning('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+    });
+</script>
 <?= $this->endSection() ?>
