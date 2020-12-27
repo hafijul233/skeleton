@@ -1,6 +1,23 @@
 <?= $this->extend('App\Views\Layouts\AuthLayout') ?>
+
+<?= $this->section('css-vendor') ?>
+<!-- Ionicons -->
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- icheck bootstrap -->
+<link rel="stylesheet" href="<?= base_url('plugins/icheck-bootstrap/icheck-bootstrap.min.css') ?>">
+<!-- Toastr -->
+<link rel="stylesheet" href="<?= base_url('plugins/toastr/toastr.min.css') ?>">
+<?= $this->endSection() ?>
+
+<?= $this->section('css') ?>
+
+<?= $this->endSection() ?>
+
 <?= $this->section('content') ?>
-<div class="card">
+<div class="card card-primary card-outline">
+    <div class="card-header text-center border-bottom-0">
+        <h3 class="m-0"><?= esc($title) ?></h3>
+    </div>
     <div class="card-body register-card-body">
         <p class="login-box-msg">Register a new membership</p>
 
@@ -65,4 +82,13 @@
     </div>
     <!-- /.form-box -->
 </div>
+<?= $this->endSection() ?>
+
+<?= $this->section('js-vendor') ?>
+<!-- Toastr -->
+<script src="<?= base_url('plugins/toastr/toastr.min.js') ?>"></script>
+<?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+
 <?= $this->endSection() ?>

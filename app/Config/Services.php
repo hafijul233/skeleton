@@ -18,13 +18,23 @@ use CodeIgniter\Config\Services as CoreServices;
 class Services extends CoreServices
 {
 
-	//    public static function example($getShared = true)
-	//    {
-	//        if ($getShared)
-	//        {
-	//            return static::getSharedInstance('example');
-	//        }
-	//
-	//        return new \CodeIgniter\Example();
-	//    }
+    //    public static function example($getShared = true)
+    //    {
+    //        if ($getShared)
+    //        {
+    //            return static::getSharedInstance('example');
+    //        }
+    //
+    //        return new \CodeIgniter\Example();
+    //    }
+
+    /**
+     * Convert Toastr Library  To Service
+     *
+     * @return \App\Libraries\Toastr
+     */
+    public static function toastr()
+    {
+        return new \App\Libraries\Toastr();
+    }
 }

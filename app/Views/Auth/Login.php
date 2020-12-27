@@ -1,29 +1,54 @@
 <?= $this->extend('App\Views\Layouts\AuthLayout') ?>
+
+<?= $this->section('css-vendor') ?>
+<!-- Ionicons -->
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- icheck bootstrap -->
+<link rel="stylesheet" href="<?= base_url('plugins/icheck-bootstrap/icheck-bootstrap.min.css') ?>">
+<?= $this->endSection() ?>
+
+<?= $this->section('css') ?>
+
+<?= $this->endSection() ?>
+
 <?= $this->section('content') ?>
-<div class="card">
+<div class="card card-primary card-outline">
+    <div class="card-header text-center border-bottom-0">
+        <h3 class="m-0"><?= esc($title) ?></h3>
+    </div>
     <div class="card-body login-card-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
         <form action="<?= route_to('login') ?>" method="post"
               accept-charset="UTF-8" autocomplete="off" spellcheck="false">
+            <?= csrf_field() ?>
             <div class="form-group">
                 <div class="input-group mb-3">
-                    <input type="email" class="form-control is-valid" placeholder="Email">
+                    <input type="text"
+                           class="form-control <?= session('errors.credential') ? 'is-invalid' : null ?>"
+                           name="credential" minlength="3" maxlength="255" size="255" value="<?= old('credential') ?>"
+                           placeholder="Email Address or Username"
+                    />
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-envelope"></span>
                         </div>
                     </div>
-                    <span class="invalid-feedback text-success">testing</span>
+                    <span id="credential-error" class="invalid-feedback"><?= session('errors.credential') ?></span>
                 </div>
             </div>
             <div class="input-group mb-3">
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password"
+                       class="form-control <?= session('errors.password') ? 'is-invalid' : null ?>"
+                       name="password" minlength="3" maxlength="255" size="255" value="<?= old('password') ?>"
+                       placeholder="Email Address or Username"
+                />
                 <div class="input-group-append">
                     <div class="input-group-text">
                         <span class="fas fa-lock"></span>
                     </div>
                 </div>
+                <span id="password-error" class="invalid-feedback"><?= session('errors.password') ?></span>
             </div>
             <div class="row">
                 <div class="col-8">
@@ -55,4 +80,12 @@
     </div>
     <!-- /.login-card-body -->
 </div>
+<?= $this->endSection() ?>
+
+<?= $this->section('js-vendor') ?>
+
+<?= $this->endSection() ?>
+
+<?= $this->section('js') ?>
+
 <?= $this->endSection() ?>

@@ -1,7 +1,7 @@
 {
     "name": "hafijul233/skeleton",
     "type": "project",
-    "description": "Ready to use CodeIgniter4 starter app with adminlte3 customized",
+    "description": "Ready to use CodeIgniter4 starter app with Adminlte3 customized",
     "homepage": "https://hafijulislam.me",
     "license": "MIT",
     "require": {
@@ -13,11 +13,12 @@
         "codeigniter4/framework": "^4",
         "dompdf/dompdf": "^0.8.5",
         "hafijul233/ci-recharge": "^1.0",
-        "seunmatt/codeigniter-log-viewer": "^1.1"
+        "tatter/thumbnails": "^1.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9@dev",
         "mikey179/vfsstream": "1.6.*",
+        "seunmatt/codeigniter-log-viewer": "^1.1",
         "phpunit/phpunit": "^8.5"
     },
     "config": {
