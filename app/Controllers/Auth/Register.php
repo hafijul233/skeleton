@@ -12,7 +12,7 @@ class Register extends BaseController
     }
 
     //--------------------------------------------------------------------
-    public function resetAttempt()
+    public function registerAttempt()
     {
         return view('Auth\Login', [
             'title' => 'Login'

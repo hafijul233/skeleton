@@ -43,7 +43,7 @@ $routes->group('/', ['namespace' => 'App\Controllers\Auth'], function ($routes) 
     $routes->post('reset-password', 'ResetPassword::loginAttempt', ['filter' => 'reset-pass']);
 
     $routes->get('register', 'Register::index', ['as' => 'register']);
-    $routes->post('register', 'Register::loginAttempt', ['filter' => 'register']);
+    $routes->post('register', 'Register::registerAttempt', ['filter' => 'register']);
 
     $routes->get('email-verification', 'VerifyEmail::index', ['as' => 'verify']);
     $routes->post('email-verification', 'VerifyEmail::loginAttempt', ['filter' => 'verify-email']);

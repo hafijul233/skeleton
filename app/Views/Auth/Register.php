@@ -22,37 +22,67 @@
         <p class="login-box-msg">Register a new membership</p>
 
         <form action="<?= route_to('register') ?>" method="post"
-              accept-charset="UTF-8" autocomplete="on" spellcheck="false">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Full name">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                        <span class="fas fa-user"></span>
+              accept-charset="UTF-8" autocomplete="off" spellcheck="false">
+            <?= csrf_field() ?>
+            <div class="form-group">
+                <div class="input-group mb-3">
+                    <input type="text"
+                           class="form-control <?= session('errors.name') ? 'is-invalid' : null ?>"
+                           name="name" minlength="3" maxlength="255" size="255" value="<?= old('name') ?>"
+                           placeholder="Full Name"
+                    />
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
                     </div>
+                    <span id="name-error" class="invalid-feedback"><?= session('errors.name') ?></span>
                 </div>
             </div>
-            <div class="input-group mb-3">
-                <input type="email" class="form-control" placeholder="Email">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                        <span class="fas fa-envelope"></span>
+            <div class="form-group">
+                <div class="input-group mb-3">
+                    <input type="text"
+                           class="form-control <?= session('errors.email') ? 'is-invalid' : null ?>"
+                           name="email" minlength="3" maxlength="255" size="255" value="<?= old('email') ?>"
+                           placeholder="Email Address"
+                    />
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
                     </div>
+                    <span id="email-error" class="invalid-feedback"><?= session('errors.email') ?></span>
                 </div>
             </div>
-            <div class="input-group mb-3">
-                <input type="password" class="form-control" placeholder="Password">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                        <span class="fas fa-lock"></span>
+            <div class="form-group">
+                <div class="input-group mb-3">
+                    <input type="password"
+                           class="form-control <?= session('errors.password') ? 'is-invalid' : null ?>"
+                           name="password" minlength="3" maxlength="255" size="255" value="<?= old('password') ?>"
+                           placeholder="Password"
+                    />
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
                     </div>
+                    <span id="password-error" class="invalid-feedback"><?= session('errors.password') ?></span>
                 </div>
             </div>
-            <div class="input-group mb-3">
-                <input type="password" class="form-control" placeholder="Retype password">
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                        <span class="fas fa-lock"></span>
+            <div class="form-group">
+                <div class="input-group mb-3">
+                    <input type="password"
+                           class="form-control <?= session('errors.confirm_password') ? 'is-invalid' : null ?>"
+                           name="confirm_password" minlength="3" maxlength="255" size="255"
+                           value="<?= old('confirm_password') ?>"
+                           placeholder="Retype Password"
+                    />
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock-open"></span>
+                        </div>
                     </div>
+                    <span id="password-error" class="invalid-feedback"><?= session('errors.password') ?></span>
                 </div>
             </div>
             <div class="row">

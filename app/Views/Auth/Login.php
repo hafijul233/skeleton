@@ -37,18 +37,20 @@
                     <span id="credential-error" class="invalid-feedback"><?= session('errors.credential') ?></span>
                 </div>
             </div>
-            <div class="input-group mb-3">
-                <input type="password"
-                       class="form-control <?= session('errors.password') ? 'is-invalid' : null ?>"
-                       name="password" minlength="3" maxlength="255" size="255" value="<?= old('password') ?>"
-                       placeholder="Email Address or Username"
-                />
-                <div class="input-group-append">
-                    <div class="input-group-text">
-                        <span class="fas fa-lock"></span>
+            <div class="form-group">
+                <div class="input-group mb-3">
+                    <input type="password"
+                           class="form-control <?= session('errors.password') ? 'is-invalid' : null ?>"
+                           name="password" minlength="3" maxlength="255" size="255" value="<?= old('password') ?>"
+                           placeholder="Password"
+                    />
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
                     </div>
+                    <span id="password-error" class="invalid-feedback"><?= session('errors.password') ?></span>
                 </div>
-                <span id="password-error" class="invalid-feedback"><?= session('errors.password') ?></span>
             </div>
             <div class="row">
                 <div class="col-8">

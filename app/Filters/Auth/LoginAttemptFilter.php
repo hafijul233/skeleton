@@ -26,6 +26,7 @@ class LoginAttemptFilter implements FilterInterface
         if ($request->getMethod() === 'post') {
             //Validator Instants
             $validator = service('validation');
+            helper('toastr');
 
             $ruleSet['password'] = ['label' => 'Password', 'rules' => 'required|min_length[8]|max_length[100]|string|alpha_numeric_punct'];
 
@@ -38,7 +39,7 @@ class LoginAttemptFilter implements FilterInterface
 
             //sending rules to validation object
             $validator->setRules($ruleSet);
-
+            toastError('testing message', 'test');
             if (!$validator->withRequest($request)->run()) {
                 return redirect()->back()->withInput()->with('errors', $validator->getErrors());
             }
