@@ -6,6 +6,8 @@ class Login extends BaseController
 {
     public function index()
     {
+        toastr()->info('toasts');
+
         return view('App\Views\Auth\Login', [
             'title' => 'Login'
         ]);

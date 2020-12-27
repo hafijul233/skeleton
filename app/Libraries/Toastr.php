@@ -166,7 +166,7 @@ class Toastr
      */
     public function options(): string
     {
-        return 'toastr.options = ' . json_encode($this->config->get('toastr.options', [])) . ';';
+        return 'toastr.options = ' . json_encode($this->config->options ?? []) . ';';
     }
 
     /**
@@ -188,7 +188,7 @@ class Toastr
             function ($n) {
                 return $this->toastr($n['type'], $n['message'], $n['title'], $n['options']);
             },
-            $this->session->get(self::TOASTR_NOTIFICATIONS, [])
+            $this->session->get(self::TOASTR_NOTIFICATIONS) ?? []
         );
     }
 

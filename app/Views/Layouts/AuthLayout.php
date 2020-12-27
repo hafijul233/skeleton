@@ -43,9 +43,10 @@
 <script src="<?= base_url('js/adminlte.min.js') ?>"></script>
 <!-- Custom Scripts -->
 <?= $this->renderSection('js') ?>
+<?= toastr_render() ?>
 <script type="text/javascript">
     $(function () {
-        toastr.options = {
+        /*toastr.options = {
             "closeButton": true,
             "debug": false,
             "newestOnTop": false,
@@ -75,7 +76,7 @@
         });
         $('.toastrDefaultWarning').click(function () {
             toastr.warning('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
-        });
+        });*/
     });
 </script>
 </body>
