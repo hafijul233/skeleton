@@ -16,9 +16,19 @@ namespace App\Controllers;
  */
 
 use CodeIgniter\Controller;
+use CodeIgniter\HTTP\RequestInterface;
+use CodeIgniter\HTTP\ResponseInterface;
+use CodeIgniter\Session\Session;
+use Psr\Log\LoggerInterface;
+use \Config\Services;
 
 class BaseController extends Controller
 {
+
+    /**
+     * @var Session
+     */
+    protected $session;
 
     /**
      * An array of helpers to be loaded automatically upon
@@ -27,12 +37,15 @@ class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = [];
+    protected $helpers = ['toastr'];
 
     /**
      * Constructor.
+     * @param RequestInterface $request
+     * @param ResponseInterface $response
+     * @param LoggerInterface $logger
      */
-    public function initController(\CodeIgniter\HTTP\RequestInterface $request, \CodeIgniter\HTTP\ResponseInterface $response, \Psr\Log\LoggerInterface $logger)
+    public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
         // Do Not Edit This Line
         parent::initController($request, $response, $logger);
@@ -42,6 +55,8 @@ class BaseController extends Controller
         //--------------------------------------------------------------------
         // E.g.:
         // $this->session = \Config\Services::session();
+
+        $this->session = Services::session();
     }
 
 }

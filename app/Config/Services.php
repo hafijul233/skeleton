@@ -27,4 +27,14 @@ class Services extends CoreServices
     //
     //        return new \CodeIgniter\Example();
     //    }
+
+    /**
+     * Convert Toastr Library  To Service
+     *
+     * @return \App\Libraries\Toastr
+     */
+    public static function toastr()
+    {
+        return new \App\Libraries\Toastr();
+    }
 }
