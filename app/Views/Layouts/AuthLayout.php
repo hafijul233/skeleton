@@ -44,40 +44,5 @@
 <!-- Custom Scripts -->
 <?= $this->renderSection('js') ?>
 <?= toastr_render() ?>
-<script type="text/javascript">
-    $(function () {
-        /*toastr.options = {
-            "closeButton": true,
-            "debug": false,
-            "newestOnTop": false,
-            "progressBar": true,
-            "positionClass": "toast-top-right",
-            "preventDuplicates": false,
-            "onclick": null,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "timeOut": "5000",
-            "extendedTimeOut": "1000",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
-        };
-
-        toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.', 'Notification');
-        $('.toastrDefaultSuccess').click(function () {
-            toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
-        });
-        $('.toastrDefaultInfo').click(function () {
-            toastr.info('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
-        });
-        $('.toastrDefaultError').click(function () {
-            toastr.error('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
-        });
-        $('.toastrDefaultWarning').click(function () {
-            toastr.warning('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
-        });*/
-    });
-</script>
 </body>
 </html>

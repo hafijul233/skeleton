@@ -18,6 +18,13 @@ class Toastr extends BaseConfig
      * Toastr Options
      */
     public $options = [
+        "closeButton" => true,
+        "newestOnTop" => false,
+        "positionClass" => "toast-top-right",
+        "preventDuplicates" => false,
+        "onclick" => null,
+        "timeOut" => "5000",
+        "extendedTimeOut" => "1000",
         "tapToDismiss" => true,
         "toastClass" => "toast",
         "containerId" => "toast-container",
@@ -34,7 +41,6 @@ class Toastr extends BaseConfig
         "closeDuration" => false,
         "closeEasing" => false,
         "closeOnHover" => true,
-        "extendedTimeOut" => 10000,
         "iconClasses" => [
             "error" => "toast-error",
             "info" => "toast-info",
@@ -42,21 +48,21 @@ class Toastr extends BaseConfig
             "warning" => "toast-warning"
         ],
         "iconClass" => "toast-info",
-        "positionClass" => "toast-top-right",
-        "timeOut" => 5000,
         "titleClass" => "toast-title",
         "messageClass" => "toast-message",
-        "escapeHtml" => false,
+        "escapeHtml" => true,
         "target" => "body",
         "closeHtml" => '<button type="button">&times;</button>',
         "closeClass" => "toast-close-button",
-        "newestOnTop" => true,
-        "preventDuplicates" => false,
-        "progressBar" => false,
+        "progressBar" => true,
         "progressClass" => "toast-progress",
         "rtl" => false
     ];
 
+    /**
+     * max number of notification
+     * @var int|null $maxItems
+     */
     public $maxItems = null;
 
 }
