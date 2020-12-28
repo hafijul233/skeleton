@@ -14,6 +14,7 @@ class Login extends BaseController
     //--------------------------------------------------------------------
     public function loginAttempt()
     {
+        dd($this->request->getPost());
         return view('Auth\Login', [
             'title' => 'Login'
         ]);
