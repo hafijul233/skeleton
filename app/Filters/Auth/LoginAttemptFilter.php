@@ -23,6 +23,7 @@ class LoginAttemptFilter implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
+
         if ($request->getMethod() === 'post') {
             $validator = service('validation');
             helper('toastr');
