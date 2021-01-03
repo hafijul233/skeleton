@@ -89,13 +89,13 @@ defined('EXIT__AUTO_MAX') || define('EXIT__AUTO_MAX', 125); // highest automatic
 */
 defined('APP_DEV') || define('APP_DEV', ''); // developer name major
 defined('APP_TITLE_LOGO') || define('APP_TITLE_LOGO', 'favicon.ico'); // application tab logo url
-defined('APP_NAME') || define('APP_NAME', 'Job Recruitment System'); // applications Project name
+defined('APP_NAME') || define('APP_NAME', 'TEST APP NAME'); // applications Project name
 defined('APP_VERSION') || define('APP_VERSION', '1.0.0'); // application production backend version
 defined('APP_BUILD') || define('APP_BUILD', 'dev'); // application minor build version if compile required
-defined('APP_RELEASED') || define('APP_RELEASED', ''); // latest production release date
+defined('APP_RELEASED') || define('APP_RELEASED', '2021-01-03'); // latest production release date
 defined('UI_VERSION') || define('UI_VERSION', '3.0.5'); // template release version
 
-defined('ORG_TITLE_LONG') || define('ORG_TITLE_LONG', ''); // Client organization long Name Title
+defined('ORG_TITLE_LONG') || define('ORG_TITLE_LONG', 'Your Client Organization'); // Client organization long Name Title
 defined('ORG_TITLE_SHORT') || define('ORG_TITLE_SHORT', ''); // Client organization Name short Title
 defined('ORG_TITLE_LOGO') || define('ORG_TITLE_LOGO', ''); // client org title/ logo image url
 defined('SUPPORT_URL') || define('SUPPORT_URL', ''); // dev off name

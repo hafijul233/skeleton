@@ -28,6 +28,8 @@
     </div>
     <!-- /.login-logo -->
     <?= $this->renderSection('content') ?>
+    <!-- public System Footer -->
+    <?= $this->include('App\Views\Includes\SystemFooter') ?>
 </div>
 <!-- /.login-box -->
 

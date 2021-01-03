@@ -35,6 +35,8 @@ $routes->get('/', 'Home::index');
 $routes->group('/', ['namespace' => 'App\Controllers\Auth'], function ($routes) {
     $routes->get('login', 'Login::index', ['as' => 'login']);
     $routes->post('login', 'Login::loginAttempt', ['filter' => 'login']);
+    $routes->get('logout', 'Logout::index', ['as' => 'logout']);
+
 
     $routes->get('forgot-password', 'ForgotPassword::index', ['as' => 'forgot']);
     $routes->post('forgot-password', 'ForgotPassword::loginAttempt', ['filter' => 'forgot-pass']);
