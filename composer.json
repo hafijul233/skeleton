@@ -12,6 +12,7 @@
         "ext-json": "*",
         "codeigniter4/framework": "^4",
         "dompdf/dompdf": "^0.8.5",
+        "egulias/email-validator": "^3.0",
         "hafijul233/ci-recharge": "^1.0",
         "tatter/thumbnails": "^1.2"
     },

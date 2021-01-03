@@ -83,61 +83,42 @@ defined('EXIT__AUTO_MAX') || define('EXIT__AUTO_MAX', 125); // highest automatic
 | This are the constants that carry most often used constants and it's
 | address .It has all
 |
-|
+| # Application Default Constants
+| # Organization/ Company/ Client information
+| #
 */
-defined('TITLE') || define('TITLE', 'Recruitment Meta'); // Application title for that company
-defined('APP_MAJOR') || define('APP_MAJOR', '1.0.0'); // application major version current prtoduction
-defined('APP_MINOR') || define('APP_MINOR', 'dev'); // application minor version current prtoduction
-defined('UI_VERSION') || define('UI_VERSION', '3.0.5'); // application minor version current prtoduction
+defined('APP_DEV') || define('APP_DEV', ''); // developer name major
+defined('APP_TITLE_LOGO') || define('APP_TITLE_LOGO', 'favicon.ico'); // application tab logo url
+defined('APP_NAME') || define('APP_NAME', 'Job Recruitment System'); // applications Project name
+defined('APP_VERSION') || define('APP_VERSION', '1.0.0'); // application production backend version
+defined('APP_BUILD') || define('APP_BUILD', 'dev'); // application minor build version if compile required
+defined('APP_RELEASED') || define('APP_RELEASED', ''); // latest production release date
+defined('UI_VERSION') || define('UI_VERSION', '3.0.5'); // template release version
 
-defined('APP_FARM') || define('APP_FARM', 'AdovaSoft'); // developer name major
-defined('APP_LOGO') || define('APP_LOGO', 'favicon.ico'); // application title logo url
-defined('APP_NAME') || define('APP_NAME', 'Job Recruitment System'); // Product name for that Email
-
-defined('RELEASE_DATE') || define('RELEASE_DATE', '2019-11-25'); // latest production release date
-defined('ORG_TITLE_LONG') || define('ORG_TITLE_LONG', 'Bangladesh Council of Scientific and Industrial Research'); // Client organization long Name Title
-defined('ORG_TITLE_SHORT') || define('ORG_TITLE_SHORT', 'BCSIR'); // Client organization Name short Title
-defined('ORG_LOGO') || define('ORG_LOGO', 'img/bcsir_logo.png'); // client org title/ logo image url
-defined('ORG_TITLE_LOGO') || define('ORG_TITLE_LOGO', 'img/logo-lg.png'); // client org title/ logo image url
-
-defined('SUPPORT_URL') || define('SUPPORT_URL', 'http://adovasoft.com'); // dev off name
+defined('ORG_TITLE_LONG') || define('ORG_TITLE_LONG', ''); // Client organization long Name Title
+defined('ORG_TITLE_SHORT') || define('ORG_TITLE_SHORT', ''); // Client organization Name short Title
+defined('ORG_TITLE_LOGO') || define('ORG_TITLE_LOGO', ''); // client org title/ logo image url
+defined('SUPPORT_URL') || define('SUPPORT_URL', ''); // dev off name
 defined('SUPPORT_TEAM') || define('SUPPORT_TEAM', 'Customer Support'); // dev off name
-
-defined('DEFAULT_PHOTO') || define('DEFAULT_PHOTO', 'images.png'); // dev off name
-defined('DEV_OFF') || define('DEV_OFF', 'mwOvGOztFXY5ACq3qdOubA=='); // dev off name
-
-defined('ALLOWED') || define('ALLOWED', 'PASSED'); //applicant passed this stage
-defined('DENIED') || define('DENIED', 'FAILED'); //applicant failed current stage
-defined('PENDING') || define('PENDING', 'WAIT'); //this stage is pending
-defined('STG_NA') || define('STG_NA', 'N/A'); //this stage is pending
-
 
 /*
 |--------------------------------------------------------------------------
 | Form Validation Expressions
 |--------------------------------------------------------------------------
-| This constants are used as form validation patterns and server side
+| This constants are can be used as form validation patterns and server side
 | validation rules on set validation and get
 |
 */
 
-defined('NAME_EXP') || define('NAME_EXP', '[a-zA-Z.\- 0-9]+$');
-defined('MOBILE_EXP') || define('MOBILE_EXP', '^01[\d]{9}$');
-defined('APPLICANT_EXP') || define('APPLICANT_EXP', '^[a-zA-Z0-9]{8,10}$');
-defined('TEXT_EXP') || define('TEXT_EXP', '[a-zA-Z0-9 ~!#$%&*\-_+=:\/,._\(\)]+');
-defined('DATE_EXP') || define('DATE_EXP', '^[\d]{4}-[\d]{2}-[\d]{2}$');
-defined('YEAR_EXP') || define('YEAR_EXP', '^[\d]{4}$');
-defined('NID_EXP') || define('NID_EXP', '^[\d]{10,17}$');
-defined('PID_EXP') || define('PID_EXP', '^[A-Z]+[\d]{3,10}$');
-defined('GPA_EXP') || define('GPA_EXP', '^[\d].[\d]{2}$');
-defined('ROLL_EXP') || define('ROLL_EXP', '^[a-zA-Z\-0-9 ]$');
-defined('DD_EXP') || define('DD_EXP', '[0-9]+$');
-defined('EMAIL_EXP') || define('EMAIL_EXP', '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$');
-defined('DATE_RANGE_EXP') || define('DATE_RANGE_EXP', '^[\d]{2} [\w]+ [\d]{4} [00-12]{2}\:[0-59]{2} (A|P)M - [\d]{2} [\w]+ [\d]{4} [0-12]{2}\:[0-59]{2} (A|P)M$');
-defined('DATE_SPELL_EXP') || define('DATE_SPELL_EXP', '^[\d]{2} [\w]+ [\d]{4}$');
-defined('ATTACHMENT_EXP') || define('ATTACHMENT_EXP', '\w+\.(pdf|doc|docx)');
-defined('DATE_TIME_EXP') || define('DATE_TIME_EXP', '^[\d]{2} [\w]+ [\d]{4} [\d]{2}\:[\d]{2} (A|P)M');
-
+defined('NAME_EXP') || define('NAME_EXP', '[a-zA-Z.\- 0-9]+$'); //EX: example name 1
+defined('MOBILE_EXP') || define('MOBILE_EXP', '^01[\d]{9}$'); //EX: 012345678910
+defined('TEXT_EXP') || define('TEXT_EXP', '[a-zA-Z0-9 ~!#$%&*\-_+=:\/,._\(\)]+$'); //EX: simple paragraph
+defined('DATE_EXP') || define('DATE_EXP', '^[\d]{4}-[\d]{2}-[\d]{2}$'); //EX: 2020-12-31
+defined('YEAR_EXP') || define('YEAR_EXP', '^[\d]{4}$'); //EX: 2020
+defined('GPA_EXP') || define('GPA_EXP', '^[\d].[\d]{2}$'); //EX: 5.00
+defined('DD_EXP') || define('DD_EXP', '[0-9]+$'); //EX: 1, 220, 3933
+defined('EMAIL_EXP') || define('EMAIL_EXP', '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'); //EX: example@example.tld
+defined('USERNAME_EXP') || define('USERNAME_EXP', '[0-9a-zA-Z](\w|\d|\s|[._\-]){2,30}$'); //EX: example_233
 
 /*
 |--------------------------------------------------------------------------
