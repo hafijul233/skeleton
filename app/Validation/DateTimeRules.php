@@ -28,7 +28,7 @@ class DateTimeRules
      *
      * @return boolean
      */
-    public function rfc_email(string $str = null)
+    public function before_date(string $str = null)
     {
         $validator = new EmailValidator();
 
@@ -45,7 +45,7 @@ class DateTimeRules
      *
      * @return boolean
      */
-    public function dns_email(string $str = null)
+    public function after_date(string $str = null)
     {
         $validator = new EmailValidator();
 
