@@ -6,6 +6,7 @@ use App\Filters\Auth\LoginAttemptFilter;
 use App\Filters\Auth\RegisterAttemptFilter;
 use App\Filters\Auth\ResetPassAttemptFilter;
 use App\Filters\Auth\VerifyEmailAttemptFilter;
+use App\Middleware\Ajax;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -19,12 +20,13 @@ class Filters extends BaseConfig
         'csrf' => CSRF::class,
         'toolbar' => DebugToolbar::class,
         'honeypot' => Honeypot::class,
-        'login' => LoginAttemptFilter::class,
-        'forgot-pass' => ForgotPassAttemptFilter::class,
-        'reset-pass' => ResetPassAttemptFilter::class,
+        'ajax' => Ajax::class,
+        'loginAttempt' => LoginAttemptFilter::class,
+        'forgotPass' => ForgotPassAttemptFilter::class,
+        'resetPass' => ResetPassAttemptFilter::class,
         'register' => RegisterAttemptFilter::class,
-        'verify-email' => VerifyEmailAttemptFilter::class,
-        'islogged' => LoggedFilter::class
+        'verifyEmail' => VerifyEmailAttemptFilter::class,
+        'isLoggedIn' => LoggedFilter::class
     ];
 
     // Always applied before every request
@@ -32,10 +34,12 @@ class Filters extends BaseConfig
         'before' => [
             //'honeypot'
             'csrf',
+            'ajax',
         ],
         'after' => [
             'toolbar',
-            //'honeypot'
+            //'honeypot',
+            'ajax',
         ],
     ];
 

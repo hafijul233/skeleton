@@ -34,21 +34,21 @@ $routes->get('/', 'Home::index');
 
 $routes->group('/', ['namespace' => 'App\Controllers\Auth'], function ($routes) {
     $routes->get('login', 'Login::index', ['as' => 'login']);
-    $routes->post('login', 'Login::loginAttempt', ['filter' => 'login']);
+    $routes->post('login', 'Login::loginAttempt', ['filter' => 'loginAttempt']);
     $routes->get('logout', 'Logout::index', ['as' => 'logout']);
 
 
     $routes->get('forgot-password', 'ForgotPassword::index', ['as' => 'forgot']);
-    $routes->post('forgot-password', 'ForgotPassword::loginAttempt', ['filter' => 'forgot-pass']);
+    $routes->post('forgot-password', 'ForgotPassword::loginAttempt', ['filter' => 'forgotPass']);
 
     $routes->get('reset-password', 'ResetPassword::index', ['as' => 'reset']);
-    $routes->post('reset-password', 'ResetPassword::loginAttempt', ['filter' => 'reset-pass']);
+    $routes->post('reset-password', 'ResetPassword::loginAttempt', ['filter' => 'resetPass']);
 
     $routes->get('register', 'Register::index', ['as' => 'register']);
     $routes->post('register', 'Register::registerAttempt', ['filter' => 'register']);
 
     $routes->get('email-verification', 'VerifyEmail::index', ['as' => 'verify']);
-    $routes->post('email-verification', 'VerifyEmail::loginAttempt', ['filter' => 'verify-email']);
+    $routes->post('email-verification', 'VerifyEmail::loginAttempt', ['filter' => 'verifyEmail']);
 });
 
 /**
