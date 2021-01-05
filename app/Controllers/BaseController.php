@@ -19,8 +19,8 @@ use CodeIgniter\Controller;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Session\Session;
+use Config\Services;
 use Psr\Log\LoggerInterface;
-use \Config\Services;
 
 class BaseController extends Controller
 {

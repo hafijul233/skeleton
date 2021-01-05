@@ -11,7 +11,6 @@ use CodeIgniter\Model;
  * @extend Model
  * @created_at 27 December, 2020 10:59:24 PM
  */
-
 class PermissionModel extends Model
 {
     /**
@@ -28,7 +27,7 @@ class PermissionModel extends Model
     protected $dateFormat = 'datetime';
     protected $createdField = 'created_at';
     protected $updatedField = 'updated_at';
-    
+
 
     /**
      * Return Configuration

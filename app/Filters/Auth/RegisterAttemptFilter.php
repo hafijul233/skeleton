@@ -3,7 +3,6 @@
 use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
-use CodeIgniter\Services;
 
 /**
  * Short description of this class usages

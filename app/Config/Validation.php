@@ -1,5 +1,12 @@
 <?php namespace Config;
 
+use App\Validation\BasicRules;
+use App\Validation\DateTimeRules;
+use CodeIgniter\Validation\CreditCardRules;
+use CodeIgniter\Validation\FileRules;
+use CodeIgniter\Validation\FormatRules;
+use CodeIgniter\Validation\Rules;
+
 class Validation
 {
     //--------------------------------------------------------------------
@@ -13,12 +20,12 @@ class Validation
      * @var array
      */
     public $ruleSets = [
-        \CodeIgniter\Validation\Rules::class,
-        \CodeIgniter\Validation\FormatRules::class,
-        \CodeIgniter\Validation\FileRules::class,
-        \CodeIgniter\Validation\CreditCardRules::class,
-        \App\Validation\BasicRules::class,
-        \App\Validation\DateTimeRules::class,
+        Rules::class,
+        FormatRules::class,
+        FileRules::class,
+        CreditCardRules::class,
+        BasicRules::class,
+        DateTimeRules::class,
     ];
 
     /**
@@ -28,8 +35,8 @@ class Validation
      * @var array
      */
     public $templates = [
-        'list' => 'CodeIgniter\Validation\Views\list',
-        'single' => 'CodeIgniter\Validation\Views\single',
+        'list' => 'App\Views\templates\list',
+        'single' => 'App\Views\templates\single',
     ];
 
     //--------------------------------------------------------------------

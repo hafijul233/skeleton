@@ -42,6 +42,12 @@ class Toastr
      * @var int
      */
     protected $maxItems;
+    /**
+     * Allowed toast types.
+     *
+     * @var array
+     */
+    protected $allowedTypes = [self::ERROR, self::INFO, self::SUCCESS, self::WARNING];
 
     /**
      * Toastr constructor.
@@ -59,13 +65,6 @@ class Toastr
     }
 
     /**
-     * Allowed toast types.
-     *
-     * @var array
-     */
-    protected $allowedTypes = [self::ERROR, self::INFO, self::SUCCESS, self::WARNING];
-
-    /**
      * Shortcut for adding an error notification.
      *
      * @param string $message The notification's message
@@ -77,6 +76,42 @@ class Toastr
     public function error(string $message, string $title = '', array $options = []): self
     {
         return $this->addNotification(self::ERROR, $message, $title, $options);
+    }
+
+    /**
+     * Add a notification.
+     *
+     * @param string $type Could be error, info, success, or warning.
+     * @param string $message The notification's message
+     * @param string $title The notification's title
+     * @param array $options
+     *
+     * @return Toastr
+     */
+    public function addNotification(string $type, string $message, string $title = '', array $options = []): self
+    {
+        $this->notifications[] = [
+            'type' => in_array($type, $this->allowedTypes, true) ? $type : self::WARNING,
+            'title' => $this->escapeSingleQuote($title),
+            'message' => $this->escapeSingleQuote($message),
+            'options' => json_encode($options),
+        ];
+
+        $this->session->setFlashdata(self::TOASTR_NOTIFICATIONS, $this->notifications);
+
+        return $this;
+    }
+
+    /**
+     * helper function to escape single quote for example for french words.
+     *
+     * @param string $value
+     *
+     * @return string
+     */
+    private function escapeSingleQuote(string $value): string
+    {
+        return str_replace("'", "\\'", $value);
     }
 
     /**
@@ -119,30 +154,6 @@ class Toastr
     public function warning(string $message, string $title = '', array $options = []): self
     {
         return $this->addNotification(self::WARNING, $message, $title, $options);
-    }
-
-    /**
-     * Add a notification.
-     *
-     * @param string $type Could be error, info, success, or warning.
-     * @param string $message The notification's message
-     * @param string $title The notification's title
-     * @param array $options
-     *
-     * @return Toastr
-     */
-    public function addNotification(string $type, string $message, string $title = '', array $options = []): self
-    {
-        $this->notifications[] = [
-            'type' => in_array($type, $this->allowedTypes, true) ? $type : self::WARNING,
-            'title' => $this->escapeSingleQuote($title),
-            'message' => $this->escapeSingleQuote($message),
-            'options' => json_encode($options),
-        ];
-
-        $this->session->setFlashdata(self::TOASTR_NOTIFICATIONS, $this->notifications);
-
-        return $this;
     }
 
     /**
@@ -231,18 +242,6 @@ class Toastr
         $this->maxItems = $max;
 
         return $this;
-    }
-
-    /**
-     * helper function to escape single quote for example for french words.
-     *
-     * @param string $value
-     *
-     * @return string
-     */
-    private function escapeSingleQuote(string $value): string
-    {
-        return str_replace("'", "\\'", $value);
     }
 
 }
