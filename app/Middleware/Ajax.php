@@ -27,8 +27,8 @@ class Ajax implements FilterInterface
         /*        if ($request->isAJAX() === true) {
 
                 }*/
-        
-        return $request->setGlobal('post', ['echo']);
+
+        return $request->setGlobal('post', ['test' => 'echo']);
     }
 
     //--------------------------------------------------------------------

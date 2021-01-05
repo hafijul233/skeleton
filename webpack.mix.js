@@ -13,9 +13,8 @@ const mix = require('laravel-mix');
 
 mix.setPublicPath('public/')
     .setResourceRoot('resources/')
-    .copyDirectory('resources/img/', 'public/img/')
+    .copyDirectory('resources/', 'public/')
     .copyDirectory('node_modules/admin-lte/plugins/', 'public/plugins/')
-    .copyDirectory('resources/plugins/', 'public/plugins/')
     .copyDirectory('node_modules/admin-lte/dist/js/', 'public/js/')
     .sass('resources/scss/admin-lte.scss', 'public/css/');
 
