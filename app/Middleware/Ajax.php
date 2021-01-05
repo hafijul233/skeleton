@@ -24,11 +24,9 @@ class Ajax implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        /*        if ($request->isAJAX() === true) {
+        if ($request->isAJAX() === true) {
 
-                }*/
-
-        return $request->setGlobal('post', ['test' => 'echo']);
+        }
     }
 
     //--------------------------------------------------------------------
