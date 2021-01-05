@@ -1,11 +1,11 @@
 <?php namespace Config;
 
-use App\Filters\Auth\ForgotPassAttemptFilter;
-use App\Filters\Auth\LoggedFilter;
-use App\Filters\Auth\LoginAttemptFilter;
-use App\Filters\Auth\RegisterAttemptFilter;
-use App\Filters\Auth\ResetPassAttemptFilter;
-use App\Filters\Auth\VerifyEmailAttemptFilter;
+use App\Filters\Authentication\ForgotPassAttemptFilter;
+use App\Filters\Authentication\LoggedFilter;
+use App\Filters\Authentication\LoginAttemptFilter;
+use App\Filters\Authentication\RegisterAttemptFilter;
+use App\Filters\Authentication\ResetPassAttemptFilter;
+use App\Filters\Authentication\VerifyEmailAttemptFilter;
 use App\Middleware\Ajax;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;

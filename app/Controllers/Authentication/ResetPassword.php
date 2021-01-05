@@ -1,4 +1,4 @@
-<?php namespace App\Controllers\Auth;
+<?php namespace App\Controllers\Authentication;
 
 use App\Controllers\BaseController;
 

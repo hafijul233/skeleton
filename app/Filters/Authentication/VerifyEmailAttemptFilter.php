@@ -1,4 +1,4 @@
-<?php namespace App\Filters\Auth;
+<?php namespace App\Filters\Authentication;
 
 use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
@@ -8,13 +8,13 @@ use CodeIgniter\Services;
 /**
  * Short description of this class usages
  *
- * @class ResetPassAttemptFilter
+ * @class VerifyEmailAttemptFilter
  * @generated_by CI-Recharge
  * @package App
  * @implements FilterInterface
- * @created_at 26 December, 2020 12:56:46 PM
+ * @created_at 26 December, 2020 12:57:00 PM
  */
-class ResetPassAttemptFilter implements FilterInterface
+class VerifyEmailAttemptFilter implements FilterInterface
 {
     /**
      * @param RequestInterface $request

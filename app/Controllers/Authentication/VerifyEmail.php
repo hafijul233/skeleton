@@ -1,13 +1,13 @@
-<?php namespace App\Controllers\Auth;
+<?php namespace App\Controllers\Authentication;
 
 use App\Controllers\BaseController;
 
-class ForgotPassword extends BaseController
+class VerifyEmail extends BaseController
 {
     public function index()
     {
-        return view('App\Views\Auth\ForgotPassword', [
-            'title' => 'Forgot Password'
+        return view('App\Views\Auth\VerifyEmail', [
+            'title' => 'Confirm Email Address'
         ]);
     }
 

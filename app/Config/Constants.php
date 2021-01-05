@@ -118,7 +118,7 @@ defined('YEAR_EXP') || define('YEAR_EXP', '^[\d]{4}$'); //EX: 2020
 defined('GPA_EXP') || define('GPA_EXP', '^[\d].[\d]{2}$'); //EX: 5.00
 defined('DD_EXP') || define('DD_EXP', '[0-9]+$'); //EX: 1, 220, 3933
 defined('EMAIL_EXP') || define('EMAIL_EXP', '[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$'); //EX: example@example.tld
-defined('USERNAME_EXP') || define('USERNAME_EXP', '[0-9a-zA-Z](\w|\d|\s|[._\-]){2,30}$'); //EX: example_233
+defined('USERNAME_EXP') || define('USERNAME_EXP', '[0-9a-zA-Z](\w|\d|\s|[._\-]){5,30}$'); //EX: example_233
 
 /*
 |--------------------------------------------------------------------------

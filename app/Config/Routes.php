@@ -32,7 +32,7 @@ $routes->setAutoRoute(true);
 
 $routes->get('/', 'Home::index');
 
-$routes->group('/', ['namespace' => 'App\Controllers\Auth'], function ($routes) {
+$routes->group('/', ['namespace' => 'App\Controllers\Authentication'], function ($routes) {
     $routes->get('login', 'Login::index', ['as' => 'login']);
     $routes->post('login', 'Login::loginAttempt', ['filter' => 'loginAttempt']);
     $routes->get('logout', 'Logout::index', ['as' => 'logout']);

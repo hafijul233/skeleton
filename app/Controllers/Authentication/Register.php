@@ -1,20 +1,19 @@
-<?php namespace App\Controllers\Auth;
+<?php namespace App\Controllers\Authentication;
 
 use App\Controllers\BaseController;
 
-class Logout extends BaseController
+class Register extends BaseController
 {
     public function index()
     {
-        return view('App\Views\Auth\Login', [
-            'title' => 'Login'
+        return view('App\Views\Auth\Register', [
+            'title' => 'Forgot Password'
         ]);
     }
 
     //--------------------------------------------------------------------
-    public function loginAttempt()
+    public function registerAttempt()
     {
-        dd($this->request->getPost());
         return view('Auth\Login', [
             'title' => 'Login'
         ]);
