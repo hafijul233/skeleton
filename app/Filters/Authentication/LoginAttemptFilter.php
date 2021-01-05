@@ -24,8 +24,6 @@ class LoginAttemptFilter implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         if ($request->getMethod() == 'post') {
-            helper('toastr');
-
             $validator = service('validation');
 
             $ruleSet['password'] = [
@@ -49,9 +47,7 @@ class LoginAttemptFilter implements FilterInterface
             //sending rules to validation object
             $validator->setRules($ruleSet);
 
-            if ($validator->withRequest($request)->run()) {
-                toastError('Invalid Form Submission', 'Validation!');
-                dd($validator->getErrors());
+            if (!$validator->withRequest($request)->run()) {
                 return redirect()->back()->withInput()->with('errors', $validator->getErrors());
             }
         }

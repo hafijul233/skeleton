@@ -96,6 +96,7 @@ class BasicRules
     public function username(string $str = null)
     {
         return (bool)preg_match('/' . USERNAME_EXP . '/i', $str);
+        //dd((bool)preg_match('/' . USERNAME_EXP . '/i', $str));
     }
 
     //-----------------------------------------------------------------------
