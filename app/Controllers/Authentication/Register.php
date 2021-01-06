@@ -6,7 +6,7 @@ class Register extends BaseController
 {
     public function index()
     {
-        return view('App\Views\Auth\Register', [
+        return view('App\Views\Authentication\Register', [
             'title' => 'Forgot Password'
         ]);
     }
@@ -14,7 +14,7 @@ class Register extends BaseController
     //--------------------------------------------------------------------
     public function registerAttempt()
     {
-        return view('Auth\Login', [
+        return view('Authentication\Login', [
             'title' => 'Login'
         ]);
     }

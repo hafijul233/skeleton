@@ -6,7 +6,7 @@ class Login extends BaseController
 {
     public function index()
     {
-        return view('App\Views\Auth\Login', [
+        return view('App\Views\Authentication\Login', [
             'title' => 'Login'
         ]);
     }

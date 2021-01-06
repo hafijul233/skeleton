@@ -6,7 +6,7 @@ class VerifyEmail extends BaseController
 {
     public function index()
     {
-        return view('App\Views\Auth\VerifyEmail', [
+        return view('App\Views\Authentication\VerifyEmail', [
             'title' => 'Confirm Email Address'
         ]);
     }
@@ -14,7 +14,7 @@ class VerifyEmail extends BaseController
     //--------------------------------------------------------------------
     public function resetAttempt()
     {
-        return view('Auth\Login', [
+        return view('Authentication\Login', [
             'title' => 'Login'
         ]);
     }

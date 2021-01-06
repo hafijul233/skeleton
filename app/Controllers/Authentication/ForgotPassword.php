@@ -6,7 +6,7 @@ class ForgotPassword extends BaseController
 {
     public function index()
     {
-        return view('App\Views\Auth\ForgotPassword', [
+        return view('App\Views\Authentication\ForgotPassword', [
             'title' => 'Forgot Password'
         ]);
     }
@@ -14,7 +14,7 @@ class ForgotPassword extends BaseController
     //--------------------------------------------------------------------
     public function resetAttempt()
     {
-        return view('Auth\Login', [
+        return view('Authentication\Login', [
             'title' => 'Login'
         ]);
     }

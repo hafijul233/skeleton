@@ -6,7 +6,7 @@ class ResetPassword extends BaseController
 {
     public function index()
     {
-        return view('App\Views\Auth\ResetPassword', [
+        return view('App\Views\Authentication\ResetPassword', [
             'title' => 'Reset Password'
         ]);
     }
@@ -14,7 +14,7 @@ class ResetPassword extends BaseController
     //--------------------------------------------------------------------
     public function resetAttempt()
     {
-        return view('Auth\Login', [
+        return view('Authentication\Login', [
             'title' => 'Login'
         ]);
     }
