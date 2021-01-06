@@ -25,7 +25,7 @@
             <div class="form-group">
                 <div class="input-group mb-3">
                     <input type="text"
-                           class="form-control <?= session('errors.credential') ? 'is-invalid' : null ?>"
+                           class="form-control <?= invalid('credential') ?>"
                            name="credential" minlength="3" maxlength="255" size="255" value="<?= old('credential') ?>"
                            placeholder="Email Address or Username"
                     />
@@ -34,14 +34,14 @@
                             <span class="fas fa-envelope"></span>
                         </div>
                     </div>
-                    <span id="credential-error" class="invalid-feedback"><?= session('errors.credential') ?></span>
+                    <?= error('credential', 'credential-error') ?>
                 </div>
             </div>
             <div class="form-group">
                 <div class="input-group mb-3">
                     <input type="password"
-                           class="form-control <?= session('errors.password') ? 'is-invalid' : null ?>"
-                           name="password" minlength="3" maxlength="255" size="255" value="<?= old('password') ?>"
+                           class="form-control <?= invalid('password') ?>"
+                           name="password" minlength="5" maxlength="255" size="255" value="<?= old('password') ?>"
                            placeholder="Password"
                     />
                     <div class="input-group-append">
@@ -49,17 +49,18 @@
                             <span class="fas fa-lock"></span>
                         </div>
                     </div>
-                    <span id="password-error" class="invalid-feedback"><?= session('errors.password') ?></span>
+                    <?= error('password', 'password-error') ?>
                 </div>
             </div>
             <div class="row">
                 <div class="col-8">
                     <div class="icheck-primary">
-                        <input type="checkbox" id="remember">
-                        <label for="remember">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember" class="<?= invalid('remember') ?>">
                             Remember Me
                         </label>
                     </div>
+                    <?= error('remember', 'remember-error') ?>
                 </div>
                 <!-- /.col -->
                 <div class="col-4">
@@ -71,7 +72,7 @@
 
         <div class="social-auth-links text-center mb-3">
             <p class="mt-3 mb-1">
-                <a href="<?= route_to('forgot') ?>">I forgot my password</a>
+                <a href="<?= route_to('forgot') ?>" class="text-center">I forgot my password</a>
             </p>
             <p class="mb-0">
                 <a href="<?= route_to('register') ?>" class="text-center">Register a new membership</a>

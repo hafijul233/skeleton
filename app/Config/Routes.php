@@ -32,6 +32,12 @@ $routes->setAutoRoute(true);
 
 $routes->get('/', 'Home::index');
 
+/**
+ * --------------------------------------------------------------------
+ * Authentication Route Definitions
+ * --------------------------------------------------------------------
+ */
+
 $routes->group('/', ['namespace' => 'App\Controllers\Authentication'], function ($routes) {
     $routes->get('login', 'Login::index', ['as' => 'login']);
     $routes->post('login', 'Login::loginAttempt', ['filter' => 'loginAttempt']);
@@ -49,6 +55,9 @@ $routes->group('/', ['namespace' => 'App\Controllers\Authentication'], function 
 
     $routes->get('email-verification', 'VerifyEmail::index', ['as' => 'verify']);
     $routes->post('email-verification', 'VerifyEmail::loginAttempt', ['filter' => 'verifyEmail']);
+
+    $routes->get('resend-email-verification', 'VerifyEmail::loginAttempt', ['as' => 'resend']);
+    $routes->post('resend-email-verification', 'VerifyEmail::loginAttempt', ['filter' => 'resendEmail']);
 });
 
 /**
