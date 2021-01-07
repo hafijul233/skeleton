@@ -11,7 +11,6 @@ use CodeIgniter\Config\BaseConfig;
  * @extend BaseConfig
  * @created_at 06 January, 2021 09:42:02 PM
  */
-
 class Authentication extends BaseConfig
 {
     /**
@@ -65,7 +64,7 @@ class Authentication extends BaseConfig
      * fields to be considered as "personal" by the NothingPersonalValidator.
      *
      * For example:
-     *	 $personalFields = ['firstname', 'lastname'];
+     *     $personalFields = ['firstname', 'lastname'];
      *
      * @var string[]
      */

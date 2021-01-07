@@ -40,7 +40,8 @@
             <div class="input-group mb-3">
                 <input type="password"
                        class="form-control <?= invalid('password_confirm') ?>"
-                       name="password_confirm" minlength="5" maxlength="255" size="255" value="<?= old('password_confirm') ?>"
+                       name="password_confirm" minlength="5" maxlength="255" size="255"
+                       value="<?= old('password_confirm') ?>"
                        placeholder="Confirm Password"
                 />
                 <div class="input-group-append">

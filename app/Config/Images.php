@@ -1,6 +1,9 @@
 <?php namespace Config;
 
 use CodeIgniter\Config\BaseConfig;
+use CodeIgniter\Images\Handlers\BaseHandler;
+use CodeIgniter\Images\Handlers\GDHandler;
+use CodeIgniter\Images\Handlers\ImageMagickHandler;
 
 class Images extends BaseConfig
 {
@@ -22,10 +25,10 @@ class Images extends BaseConfig
     /**
      * The available handler classes.
      *
-     * @var \CodeIgniter\Images\Handlers\BaseHandler[]
+     * @var BaseHandler[]
      */
     public $handlers = [
-        'gd' => \CodeIgniter\Images\Handlers\GDHandler::class,
-        'imagick' => \CodeIgniter\Images\Handlers\ImageMagickHandler::class,
+        'gd' => GDHandler::class,
+        'imagick' => ImageMagickHandler::class,
     ];
 }

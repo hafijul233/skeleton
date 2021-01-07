@@ -1,6 +1,11 @@
 <?php namespace Config;
 
+use BadMethodCallException;
 use CodeIgniter\Config\BaseConfig;
+use CodeIgniter\Format\FormatterInterface;
+use CodeIgniter\Format\JSONFormatter;
+use CodeIgniter\Format\XMLFormatter;
+use InvalidArgumentException;
 
 class Format extends BaseConfig
 {
@@ -35,9 +40,9 @@ class Format extends BaseConfig
     |
     */
     public $formatters = [
-        'application/json' => \CodeIgniter\Format\JSONFormatter::class,
-        'application/xml' => \CodeIgniter\Format\XMLFormatter::class,
-        'text/xml' => \CodeIgniter\Format\XMLFormatter::class,
+        'application/json' => JSONFormatter::class,
+        'application/xml' => XMLFormatter::class,
+        'text/xml' => XMLFormatter::class,
     ];
 
     /*
@@ -61,18 +66,18 @@ class Format extends BaseConfig
      *
      * @param string $mime
      *
-     * @return \CodeIgniter\Format\FormatterInterface
+     * @return FormatterInterface
      */
     public function getFormatter(string $mime)
     {
         if (!array_key_exists($mime, $this->formatters)) {
-            throw new \InvalidArgumentException('No Formatter defined for mime type: ' . $mime);
+            throw new InvalidArgumentException('No Formatter defined for mime type: ' . $mime);
         }
 
         $class = $this->formatters[$mime];
 
         if (!class_exists($class)) {
-            throw new \BadMethodCallException($class . ' is not a valid Formatter.');
+            throw new BadMethodCallException($class . ' is not a valid Formatter.');
         }
 
         return new $class();

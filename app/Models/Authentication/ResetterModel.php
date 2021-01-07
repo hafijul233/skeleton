@@ -11,7 +11,6 @@ use CodeIgniter\Model;
  * @extend Model
  * @created_at 06 January, 2021 10:52:43 PM
  */
-
 class ResetterModel extends Model
 {
     /**

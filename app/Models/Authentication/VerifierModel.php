@@ -11,7 +11,6 @@ use CodeIgniter\Model;
  * @extend Model
  * @created_at 06 January, 2021 10:53:32 PM
  */
-
 class VerifierModel extends Model
 {
     /**

@@ -22,7 +22,7 @@ CI_ENVIRONMENT = development
 
 app.baseURL = 'http://localhost:8080/'
 app.indexPage = ''
-app.appTimezone = 'America/Chicago'
+app.appTimezone = 'Asia/Dhaka'
 
 # if server has https enabled
 # app.forceGlobalSecureRequests = false

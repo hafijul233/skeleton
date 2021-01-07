@@ -11,7 +11,6 @@ use CodeIgniter\Model;
  * @extend Model
  * @created_at 06 January, 2021 10:48:41 PM
  */
-
 class RegisterModel extends Model
 {
     /**
