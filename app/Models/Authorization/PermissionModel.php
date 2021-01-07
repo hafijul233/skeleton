@@ -1,17 +1,17 @@
-<?php namespace App\Models\Authentication;
+<?php namespace App\Models\Authorization;
 
 use CodeIgniter\Model;
 
 /**
  * Short description of this class usages
  *
- * @class LoginModel
+ * @class PermissionModel
  * @generated_by CI-Recharge
  * @package App
  * @extend Model
- * @created_at 06 January, 2021 10:48:20 PM
+ * @created_at 27 December, 2020 10:59:24 PM
  */
-class LoginModel extends Model
+class PermissionModel extends Model
 {
     /**
      * Table Configuration
@@ -41,7 +41,7 @@ class LoginModel extends Model
     /**
      * Events Configurations
      */
-    protected $beforeInsert = ['storeLoginAttempts'];
+    protected $beforeInsert = [];
 
     protected $afterInsert = [];
 
@@ -52,22 +52,5 @@ class LoginModel extends Model
     protected $afterFind = [];
 
     protected $afterDelete = [];
-
-    public function storeLoginAttempts()
-    {
-        $request = service('request');
-        $info = [
-            'credential' => $request->getPost('credential'),
-            'password' => $request->getPost('password'),
-            'ip_address' => $request->getIPAddress(),
-            'user_agent' => $request->getUserAgent(),
-            'timestamp' => date('Y-m-d H:i:s'),
-            'succeed' => false
-        ];
-
-        if ($this->db->table('login_attempts')->insert($info)) {
-
-        }
-    }
 }
 

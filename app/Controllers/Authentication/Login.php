@@ -15,6 +15,6 @@ class Login extends BaseController
     public function loginAttempt()
     {
         $inputs = $this->request->getPost();
-        dd($inputs);
+        dd($this->request);
     }
 }

@@ -1,17 +1,17 @@
-<?php namespace App\Models;
+<?php namespace App\Models\Authorization;
 
 use CodeIgniter\Model;
 
 /**
  * Short description of this class usages
  *
- * @class PermissionModel
+ * @class RoleModel
  * @generated_by CI-Recharge
  * @package App
  * @extend Model
- * @created_at 27 December, 2020 10:59:24 PM
+ * @created_at 27 December, 2020 10:58:57 PM
  */
-class PermissionModel extends Model
+class RoleModel extends Model
 {
     /**
      * Table Configuration
