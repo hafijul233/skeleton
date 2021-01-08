@@ -18,7 +18,6 @@
     </div>
     <div class="card-body login-card-body">
         <p class="login-box-msg">Sign in to start your session</p>
-
         <form action="<?= route_to('login') ?>" method="post"
               accept-charset="UTF-8" autocomplete="off" spellcheck="false">
             <?= csrf_field() ?>
@@ -34,7 +33,7 @@
                             <span class="fas fa-envelope"></span>
                         </div>
                     </div>
-                    <?= error('credential') ?>
+                    <?= error('credential', 'credential-error') ?>
                 </div>
             </div>
             <div class="form-group">
@@ -54,13 +53,20 @@
             </div>
             <div class="form-group row">
                 <div class="col-8">
+                    <div class="form-check pl-0">
                     <div class="icheck-primary">
-                        <input type="checkbox" id="remember" name="remember">
-                        <label for="remember" class="<?= invalid('remember') ?>">
+                        <input type="checkbox" id="remember" 
+                        class="form-control form-check-input <?= invalid('remember') ?>" 
+                        name="remember" value="no" 
+                        <?= (old('remember')!= null) ? 'checked' : null ?>
+                        />
+                        <label for="remember" class="form-check-label">
                             Remember Me
                         </label>
+                        <?= error('remember', 'remember-error') ?>
                     </div>
-                    <?= error('remember', 'remember-error') ?>
+                </div>
+
                 </div>
                 <!-- /.col -->
                 <div class="col-4">
@@ -104,7 +110,8 @@
                 password: {
                     minlength: 5,
                     maxlength: 255,
-                    required: true
+                    required: true,
+                    password:true
                 }
             }
         });

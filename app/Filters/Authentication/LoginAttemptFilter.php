@@ -26,10 +26,18 @@ class LoginAttemptFilter implements FilterInterface
         if ($request->getMethod() == 'post') {
             $validator = service('validation');
 
-            $ruleSet['password'] = [
+            $ruleSet = [
+                'password' =>[
                 'label' => 'Password',
                 'rules' => 'required|min_length[8]|max_length[100]|string|alpha_numeric_punct'
+            ],
+            'remember' => [
+                                'label' => 'Remember Me',
+                'rules' => 'permit_empty|in_list[yes,no]'
+            ]
             ];
+
+
 
             //Confirm Email Address or Username
             if (filter_input(INPUT_POST, 'credential', FILTER_VALIDATE_EMAIL) === false)

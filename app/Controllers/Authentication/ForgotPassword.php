@@ -1,8 +1,8 @@
 <?php namespace App\Controllers\Authentication;
 
-use App\Controllers\BaseController;
+use App\Controllers\InitController;
 
-class ForgotPassword extends BaseController
+class ForgotPassword extends InitController
 {
     public function index()
     {

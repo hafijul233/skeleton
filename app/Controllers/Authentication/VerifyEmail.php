@@ -1,8 +1,8 @@
 <?php namespace App\Controllers\Authentication;
 
-use App\Controllers\BaseController;
+use App\Controllers\InitController;
 
-class VerifyEmail extends BaseController
+class VerifyEmail extends InitController
 {
     public function index()
     {

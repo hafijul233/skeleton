@@ -5,9 +5,10 @@ if (typeof $.validator === 'function') {
         errorPlacement: function (error, element) {
             // Add the `invalid-feedback` class to the error element bs4
             error.addClass("invalid-feedback");
+            console.log(element);
             if (element.prop("type") === "checkbox") {
-                element.closest('.form-group').find('.invalid-feedback').replaceWith(error);
-            } else {
+                element.parent("label").closest('.form-group').find('.invalid-feedback').replaceWith(error);
+           } else {
                 element.closest('.form-group').find('.invalid-feedback').replaceWith(error);
             }
         },
@@ -29,7 +30,7 @@ if (typeof $.validator === 'function') {
 
     //name match method
     $.validator.addMethod("nametitle", function (value, element) {
-            return this.optional(element) || /[a-zA-Z.\-]+$/.test(value);
+            return this.optional(element) || /^[a-zA-Z.\- 0-9]+$/.test(value);
         },
         "Please enter only alphabets and spaces."
     );
@@ -41,9 +42,16 @@ if (typeof $.validator === 'function') {
         "Please enter value on this 01XXXXXXXXX format."
     );
 
-    //applicant's id & password match method
+    //credential match method
     $.validator.addMethod("credential", function (value, element) {
-            return this.optional(element) || /^[a-zA-Z0-9]{8,10}$/.test(value);
+            return this.optional(element) || /^[0-9a-zA-Z._\-]{5,30}$/.test(value);
+        },
+        "Please enter only alphabet and numbers."
+    );
+
+    //applicant's credential match method
+    $.validator.addMethod("password", function (value, element) {
+            return this.optional(element) || /^[a-zA-Z0-9 ~!#$%&*\-_+=:\/,.()]{5,100}$/.test(value);
         },
         "Please enter only alphabet and numbers."
     );
