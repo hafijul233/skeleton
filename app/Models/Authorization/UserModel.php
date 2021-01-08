@@ -1,4 +1,4 @@
-<?php namespace App\Models;
+<?php namespace App\Models\Authorization;
 
 use CodeIgniter\Model;
 
@@ -50,7 +50,7 @@ class UserModel extends Model
     /**
      * Events Configurations
      */
-    protected $beforeInsert = [];
+    protected $beforeInsert = ['hashPassword'];
 
     protected $afterInsert = [];
 
@@ -62,12 +62,13 @@ class UserModel extends Model
 
     protected $afterDelete = [];
 
-    /**
-     * Callback Function
-     */
-    public function test()
+    protected function hashPassword(array $data)
     {
+        $config = config('Authentication');
+        if (!isset($data['data']['password'])) return $data;
+        $data['data']['password'] = password_hash($data['data']['password'], $config->hashAlgorithm);
 
+        return $data;
     }
 }
 

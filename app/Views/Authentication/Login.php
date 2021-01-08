@@ -55,9 +55,9 @@
                 <div class="col-8">
                     <div class="form-check pl-0">
                     <div class="icheck-primary">
-                        <input type="checkbox" id="remember" 
-                        class="form-control form-check-input <?= invalid('remember') ?>" 
-                        name="remember" value="no" 
+                        <input type="checkbox" id="remember"
+                        class="form-control form-check-input <?= invalid('remember') ?>"
+                        name="remember" value="yes"
                         <?= (old('remember')!= null) ? 'checked' : null ?>
                         />
                         <label for="remember" class="form-check-label">

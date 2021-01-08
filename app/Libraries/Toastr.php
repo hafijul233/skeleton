@@ -57,7 +57,7 @@ class Toastr
     {
         $this->session = Services::session();
 
-        $this->config = new \Config\Toastr();
+        $this->config = config('Toastr');
 
         $this->notifications = $this->session->get(self::TOASTR_NOTIFICATIONS) ?? [];
 
