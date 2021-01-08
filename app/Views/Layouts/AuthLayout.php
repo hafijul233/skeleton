@@ -37,14 +37,15 @@
 <script src="<?= base_url('plugins/jquery/jquery.min.js') ?>"></script>
 <!-- Bootstrap 4 -->
 <script src="<?= base_url('plugins/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-<!-- Vendor Scripts -->
+<!-- Vendor JS -->
 <?= $this->renderSection('js-vendor') ?>
 <!-- Toastr -->
 <script src="<?= base_url('plugins/toastr/toastr.min.js') ?>"></script>
 <!-- AdminLTE App -->
 <script src="<?= base_url('js/adminlte.min.js') ?>"></script>
-<!-- Custom Scripts -->
+<!-- Custom JS -->
 <?= $this->renderSection('js') ?>
+<!-- Notification -->
 <?= toastr_render() ?>
 </body>
 </html>

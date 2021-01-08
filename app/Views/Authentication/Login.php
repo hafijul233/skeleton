@@ -34,7 +34,7 @@
                             <span class="fas fa-envelope"></span>
                         </div>
                     </div>
-                    <?= error('credential', 'credential-error') ?>
+                    <?= error('credential') ?>
                 </div>
             </div>
             <div class="form-group">
@@ -52,7 +52,7 @@
                     <?= error('password', 'password-error') ?>
                 </div>
             </div>
-            <div class="row">
+            <div class="form-group row">
                 <div class="col-8">
                     <div class="icheck-primary">
                         <input type="checkbox" id="remember" name="remember">
@@ -86,9 +86,28 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('js-vendor') ?>
+<script src="<?= base_url('plugins/jquery-validation/jquery.validate.min.js') ?>"></script>
+<script src="<?= base_url('js/validation.js') ?>"></script>
 
 <?= $this->endSection() ?>
 
 <?= $this->section('js') ?>
-
+<script>
+    $(function () {
+        $("form").validate({
+            rules: {
+                credential: {
+                    minlength: 3,
+                    maxlength: 255,
+                    required: true
+                },
+                password: {
+                    minlength: 5,
+                    maxlength: 255,
+                    required: true
+                }
+            }
+        });
+    });
+</script>
 <?= $this->endSection() ?>
